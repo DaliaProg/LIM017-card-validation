@@ -22,9 +22,11 @@ answer.addEventListener("click", function () {
     let number = document.getElementById('inputNumero').value
     console.log(number)
     let isValid = validator.isValid(number)
+    let maskify = validator.maskify(number)
     if (isValid) {
         document.getElementById('Formulario').style.display = 'none';
         document.getElementById('Correcto').style.display = 'block';
+        document.getElementById('card').innerHTML = `¡Tu tarjeta ${maskify} fue validada con éxito!`
         document.getElementById('Incorrecto').style.display = 'none';
     }
     else {
@@ -34,4 +36,12 @@ answer.addEventListener("click", function () {
     }
 })
 
- 
+let principal = document.getElementById("principal");
+principal.addEventListener("click", function () {
+    location.reload();
+})
+
+let reload = document.getElementById("reload");
+reload.addEventListener("click", function () {
+    location.reload();
+})

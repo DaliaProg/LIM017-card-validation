@@ -1,55 +1,56 @@
 const validator = {
   isValid: function (cc) {
-
-    console.log(cc);
     const capture = cc.toString().split('');
-    console.log(capture);
     const invertir = capture.reverse();
     console.log(invertir);
+    
+         const newArray = [];
     for(let i=0;i<invertir.length;i++) {
       if(i % 2 ==0) {
         //impares
-        console.log(invertir[i],"impares");
+        console.log(invertir[i],"impares")
+        newArray.push(invertir[i]);
       }
       else {
-        //pares
-        console.log(invertir[i],"pares");
+        const double = invertir[i]*2;
+        if (double > 9) {
+        newArray.push(parseInt(double -9, 10));
+        }
+        else{
+          newArray.push(parseInt(double, 10));
+        }
       }
+    }
+  console.log(newArray);
+  let acumulator = 0;
+    for(let i=0;i<newArray.length;i++) {
+    console.log(newArray[i]);
+   acumulator = acumulator + parseInt(newArray[i]);
     }
     
 
-
-  },
+      if (acumulator%10==0) {
+        return true;
+    }
+      else {
+        return false;
+      }
+     } ,
   
   maskify: function (cc) {
-    // If length is greater than 4, then we have things to mask
-    if (n.length > 4) {
-        // reverse string
-        let reversed = reverse(n);
-        let newString = '';
-        for (let i = 0; i < reversed.length; i++) {
-          // if i < 4, we want to reveal these numbers in our output
-          if (i < 4) {
-            newString += reversed[i];
-          } else {
-            // otherwise, just hide it
-            newString += '#';
-          }
-        }
-        // return the reversal of the string to revert it back to original format
-        return reverse(newString);
-    } else {
-        return n;
-    }
-  }
-, 
-
-  
+      const position = cc.slice(-4);
+      console.log(position);
+      const capture = cc.toString().split('');
+      console.log(capture);
+      for(let i=0;i<capture.length; i++) {
+        capture[i] = capture[i].replace(/./g,'#')
+      }
+      let newNcard = capture.join('');
+      let masked = newNcard.slice(0,-4) + position;
+      return masked
+  }  
 };
 
 export default validator;
 
-   
-  function reverse(str) {
-    return str.split("").reverse().join("");
-  }
+
