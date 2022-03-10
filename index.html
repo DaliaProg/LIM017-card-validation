@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <header><img class="logo" src="img/vb-removebg-preview.png"></header>
+
+<div id="Formulario">
+<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+  <div class="grupo">
+    <label for="inputNumero">Número de tarjeta</label>
+    <input type="text" placeholder="16 dígitos" maxlength="16" autocomplete="off" class="space" id="inputNumero">
+    </div>
+
+  <div class="grupo">
+    <label for="inputNombre">Nombre</label>
+    <input type="text" autocomplete="off" class="space" id="inputNombre">
+    </div>
+
+<div class="flexbox">
+  <div class="grupo expira">
+    <label for="selectMes">Expira</label>
+    <div class="flexbox">
+      <div class="grupo-select">
+        <select name="mes" id="selectMes">
+        <option disabled selected>Mes</option>
+      </select>
+      <i class="fas fa-angle-down"></i>
+      </div>
+      <div class="grupo-select">
+        <select name="year" id="selectYear">
+        <option disabled selected >Año</option>
+      </select>
+      <i class="fas fa-angle-down"></i>
+      </div>
+    </div>
+  </div>
+    <div class="grupo ccv">
+    <label for="inputCCV">CCV</label>
+    <input type="text" id="inputCCV" maxlength="3">
+  </div>
+</div>
+
+<br><button type="button" class="btn-enviar" id="answer">Enviar</button>
+</br>
+</form>
+</div>
+ </body>
+  </main>
+</div>
+<div id="Correcto">
+<p id="card"></p>
+<p><button type="button" class="Login">Ingresar a banca por internet</button></p>
+<p><button type="button" id="principal" >Regresar a la página principal</button></p>
+</div>
+
+<div id="Incorrecto">
+<p>Lo sentimos. Los datos ingresados son incorrectos. Por favor verifícalos.</p>
+<p><button type="button" id="reload" >Entendido</button></p>
+</div>
+  <script src="index.js" type="module"></script>
+
+</html>
